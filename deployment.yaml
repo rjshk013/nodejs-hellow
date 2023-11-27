@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: sampath5/node-helloworld
+        image: rjshk013/node-hello
         ports:
         - containerPort: 8000
        
