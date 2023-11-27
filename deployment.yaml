@@ -28,7 +28,7 @@ metadata:
   labels:
     app: helloworld
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 8000
     protocol: TCP
