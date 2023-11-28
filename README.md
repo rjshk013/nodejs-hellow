@@ -148,6 +148,7 @@ Now we can use Jenkins as root user and for that run the following command
 $ sudo su - jenkins
 
 This step is very important 
+
 -------------------------------------------------------------------------------------
 Step 1— Install Docker
 
