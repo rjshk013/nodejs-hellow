@@ -254,3 +254,7 @@ You can set the docker credentials by going into -
 
 Goto -> Jenkins -> Manage Jenkins -> Manage Credentials -> Stored scoped to jenkins -> global -> Add Credentials
 
+Steps done to build & push docker images to ecr repo & deploy the same app to eks cluster
+-----------------------------------------------------------------------------------------------
+In jenkins :
+1.Install AWS Credentials Plugin & configure aws credentails 
