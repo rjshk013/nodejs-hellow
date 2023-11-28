@@ -126,6 +126,7 @@ sudo a2enmod headers
 sudo systemctl restart apache2
 
 After enabling the Apache configuration and restarting the Apache service, you will be able to access your Jenkins via your domain.
+
 Configure jenkins with required tools 
 --------------------------------------
 Let’s add jenkins user as an administrator and also ass NOPASSWD so that during the pipeline run it will not ask for root password.
