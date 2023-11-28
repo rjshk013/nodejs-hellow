@@ -101,7 +101,6 @@ sudo nano jenkins.conf
 Paste the following lines of code, save and close the file.
 
 
-
 <Virtualhost *:80>
     ServerName        yourdomain.com
     ProxyRequests     Off
@@ -117,6 +116,7 @@ Paste the following lines of code, save and close the file.
     ProxyPassReverse  /  http://localhost:8080/
     ProxyPassReverse  /  http://yourdomain.com/
 </Virtualhost>
+
 
 Note: Either you can give domain name or jenkins server public ip replacing yourdomain.com 
 Once you save and close the file, you need to execute the following commands:
