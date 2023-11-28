@@ -100,6 +100,8 @@ sudo nano jenkins.conf
 
 Paste the following lines of code, save and close the file.
 
+
+
 <Virtualhost *:80>
     ServerName        yourdomain.com
     ProxyRequests     Off
