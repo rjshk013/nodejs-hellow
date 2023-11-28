@@ -1,0 +1,26 @@
+node {
+
+    stage("Git Clone"){
+
+        git credentialsId: 'GIT_HUB_CREDENTIALS', url: 'https://github.com/ninztec/nodejs-hellow.git', branch: 'master' 
+    }
+
+     stage("Build") {
+
+       sh 'docker build . -t rjshk013/node-hellow:latest'
+       sh 'docker image list'
+
+    }
+
+    withCredentials([string(credentialsId: 'DOCKER_HUB_PASSWORD', variable: 'PASSWORD')]) {
+        sh 'docker login -u rjshk013 -p $PASSWORD'
+    }
+
+    stage("Push Image to Docker Hub"){
+        sh 'docker push rjshk013/node-hellow:latest'
+    }
+
+    stage("kubernetes deployment"){
+        sh 'kubectl apply -f deployment.yaml'
+    }
+}
