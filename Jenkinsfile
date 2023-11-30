@@ -25,15 +25,15 @@ pipeline {
                         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                     ]
                 ]) {
-                    sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 123456789.dkr.ecr.us-east-1.amazonaws.com/ninzraju-non-prod-ecr'
+                    sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 446440614855.dkr.ecr.us-east-1.amazonaws.com/ninzraju-non-prod-ecr'
                 }
             }
         }
 
         stage('Tag and Push Image to ECR') {
             steps {
-                sh 'docker tag ninzraju-non-prod-ecr:latest 123456789.dkr.ecr.us-east-1.amazonaws.com/ninzraju-non-prod-ecr:latest'
-                sh 'docker push 123456789.dkr.ecr.us-east-1.amazonaws.com/ninzraju-non-prod-ecr:latest'
+                sh 'docker tag ninzraju-non-prod-ecr:latest 446440614855.dkr.ecr.us-east-1.amazonaws.com/ninzraju-non-prod-ecr:latest'
+                sh 'docker push 446440614855.dkr.ecr.us-east-1.amazonaws.com/ninzraju-non-prod-ecr:latest'
             }
         }
 
