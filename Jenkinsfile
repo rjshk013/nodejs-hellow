@@ -37,9 +37,16 @@ pipeline {
             }
         }
 
-        stage('Kubernetes Deployment') {
+        stage('Helm Chart Deployment') {
             steps {
-                sh 'kubectl apply -f deployment.yaml'
+                script {
+                    def workspaceDir = pwd()
+                    echo "Workspace Directory: ${workspaceDir}"
+                    sh 'ls -l'
+                    dir('nodejs') {
+                        sh 'helm upgrade -n default --install nodejs-eks . -f values.yaml'
+                    }
+                }
             }
         }
     }
