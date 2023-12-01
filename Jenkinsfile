@@ -44,7 +44,7 @@ pipeline {
                     echo "Workspace Directory: ${workspaceDir}"
                     sh 'ls -l'
                     dir('nodejs') {
-                        sh 'helm upgrade -n default --install nodejs-eks /var/lib/jenkins/workspace/nodejs-eks/nodejs/values.yaml'
+                        sh 'helm upgrade -n default --install nodejs-eks -f /var/lib/jenkins/workspace/nodejs-eks/nodejs/values.yaml'
                     }
                 }
             }
