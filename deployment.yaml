@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: rjshk013/node-hellow
+        image: 446440614855.dkr.ecr.us-east-1.amazonaws.com/ninzraju-non-prod-ecr:latest
         ports:
         - containerPort: 8000
        
