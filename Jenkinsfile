@@ -37,17 +37,11 @@ pipeline {
             }
         }
 
-        stage('Helm Chart Deployment') {
-            steps {
-                script {
-                    def workspaceDir = pwd()
-                    echo "Workspace Directory: ${workspaceDir}"
-                    sh 'ls -l'
-                    dir('nodejs') {
-                        sh 'helm upgrade -n default --install nodejs-eks nodejs -f /var/lib/jenkins/workspace/nodejs-eks/nodejs/values.yaml'
-                    }
-                }
-            }
+stage('Helm Chart Deployment') {
+    steps {
+        dir('nodejs') {
+            sh 'helm upgrade -n default --install nodejs-eks . -f values.yaml'
         }
     }
 }
+
