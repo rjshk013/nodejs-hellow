@@ -41,7 +41,7 @@ pipeline {
             steps {
                 // Assuming your Helm chart is in the 'helm' directory
                 dir('nodejs') {
-                    sh 'helm upgrade -n default --install nodejs-eks ./nodejs/values.yaml'
+                    sh 'helm upgrade -n default --install nodejs-eks ./values.yaml'
                 }
             }
         }
