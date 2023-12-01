@@ -37,9 +37,12 @@ pipeline {
             }
         }
 
-        stage('Kubernetes Deployment') {
+        stage('Helm Chart Deployment') {
             steps {
-                sh 'kubectl apply -f deployment.yaml'
+                // Assuming your Helm chart is in the 'helm' directory
+                dir('nodejs') {
+                    sh 'helm upgrade -n default --install nodejs-eks ./nodejs'
+                }
             }
         }
     }
