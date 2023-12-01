@@ -39,9 +39,13 @@ pipeline {
 
         stage('Helm Chart Deployment') {
             steps {
-                // Assuming your Helm chart is in the 'helm' directory
-                dir('nodejs') {
-                    sh 'helm upgrade -n default --install nodejs-eks ./nodejs'
+                script {
+                    def workspaceDir = pwd()
+                    echo "Workspace Directory: ${workspaceDir}"
+                    sh 'ls -l'
+                    dir('nodejs') {
+                        sh 'helm upgrade -n default --install nodejs-eks .'
+                    }
                 }
             }
         }
