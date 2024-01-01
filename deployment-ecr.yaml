@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: rjshk013/node-hellow:latest
+        image: 446440614855.dkr.ecr.us-east-1.amazonaws.com/ninzraju-non-prod-ecr:latest
         ports:
         - containerPort: 8000
        
@@ -29,7 +29,7 @@ metadata:
   labels:
     app: helloworld
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 80
     targetPort: 8000
