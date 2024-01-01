@@ -253,8 +253,32 @@ Setup Docker Hub Secret Text in Jenkins
 You can set the docker credentials by going into -
 
 Goto -> Jenkins -> Manage Jenkins -> Manage Credentials -> Stored scoped to jenkins -> global -> Add Credentials
+type:Secret test
+under secret : give dockerhub password
+ID:DOCKER_HUB_PASSWORD
 
 Steps done to build & push docker images to ecr repo & deploy the same app to eks cluster
 -----------------------------------------------------------------------------------------------
+if k8s running under local machine via kind
+-no need of extra plugins
+
 In jenkins :
 1.Install AWS Credentials Plugin & configure aws credentails 
+
+Testing of node js deployment on local k8s 
+------------------------------------------
+sudo kubectl get svc
+
+sample output: nodejs-service   NodePort    10.96.215.101   <none>        8000:32121/TCP   59m
+
+test using portforward:
+-sudo kubectl port-forward service/nodejs-service 8000:8000
+Note: if you are getting error like port already is bind & in use change the external port to someother port like 8090:8000
+check getting output 
+-http://localhost:8090/  --output Hello World!!!
+
+Check using curl&telnet command to test connectivity
+-telnet 172.19.0.3(this is the node ip get via kubectl get nodes ) 32121
+-curl 172.19.0.3:32121
+Hello World!!!jenkins
+-
