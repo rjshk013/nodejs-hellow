@@ -40,17 +40,17 @@ service:
   type: NodePort
   port: 80
 
-# ingress:
-#   enabled: true
-#   className: "nginx"
-#   annotations: {}
-#   kubernetes.io/ingress.class: "nginx"
-#     # kubernetes.io/tls-acme: "true"
-#   hosts:
-#     - host: a4f58b472a2e44759a2d0f88fa6edb7f-441061358.us-east-1.elb.amazonaws.com
-#       paths:
-#         - path: /
-#           pathType: ImplementationSpecific
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations: {}
+  kubernetes.io/ingress.class: "nginx"
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: a4f58b472a2e44759a2d0f88fa6edb7f-441061358.us-east-1.elb.amazonaws.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
