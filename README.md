@@ -253,7 +253,7 @@ Setup Docker Hub Secret Text in Jenkins
 You can set the docker credentials by going into -
 
 Goto -> Jenkins -> Manage Jenkins -> Manage Credentials -> Stored scoped to jenkins -> global -> Add Credentials
-type:Secret test
+type:Secret text
 under secret : give dockerhub password
 ID:DOCKER_HUB_PASSWORD
 
