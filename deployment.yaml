@@ -33,6 +33,6 @@ spec:
   - port: 8000
     protocol: TCP
     targetPort: 8000
-    nodePort: 32121
+    # nodePort: 32121
   selector:
     app: helloworld
